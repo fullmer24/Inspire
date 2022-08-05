@@ -4,6 +4,9 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = []
+  /** @type {import('./Models/Image.js').Image} */
+  // @ts-ignore
+  image = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {
