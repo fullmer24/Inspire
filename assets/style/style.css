@@ -1,3 +1,25 @@
 .bg-img {
     height: 100vh;
+    position: relative;
+}
+
+.timeY {
+    position: absolute;
+    transform: translate(20em, 20em);
+}
+
+
+.weather {
+    position: absolute;
+    transform: translateX(45em)
+}
+
+.quote {
+    position: absolute;
+    transform: translate(20em, 40em);
+}
+
+.todo {
+    position: absolute;
+    transform: translate(40em, 40em);
 }

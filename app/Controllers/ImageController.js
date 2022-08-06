@@ -11,7 +11,7 @@ function _drawImg() {
 
 export class ImageController {
     constructor() {
-        console.log(`image controller loaded`);
+        // console.log(`image controller loaded`);
         ProxyState.on('image', _drawImg)
         this.getImages()
     }
