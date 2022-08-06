@@ -11,7 +11,7 @@ function _drawQuote() {
 
 export class QuoteController {
     constructor() {
-        console.log(`quote controller loaded`);
+        // console.log(`quote controller loaded`);
         ProxyState.on('quote', _drawQuote)
         this.getQuote()
     }
@@ -25,12 +25,12 @@ export class QuoteController {
         }
     }
 
-    async getAuthor() {
-        try {
-            await quotesService.getAuthor()
-        } catch (error) {
-            console.error('[getting author]', error);
-            Pop.error(error)
-        }
-    }
+    // async getAuthor() {
+    //     try {
+    //         await quotesService.getAuthor()
+    //     } catch (error) {
+    //         console.error('[getting author]', error);
+    //         Pop.error(error)
+    //     }
+    // }
 }
