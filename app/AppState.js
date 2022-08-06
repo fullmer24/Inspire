@@ -7,6 +7,9 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Image.js').Image} */
   // @ts-ignore
   image = null
+  /** @type {import('./Models/Weather.js').Weather} */
+  // @ts-ignore
+  weather = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {
