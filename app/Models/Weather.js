@@ -5,7 +5,7 @@ export class Weather {
 
     get WeatherTemplate() {
         return `
-        <div class="text-light">${this.temp}</div>
+        <div>${this.temp}</div>
         `
     }
 }

@@ -5,8 +5,9 @@ import { Pop } from "../Utils/Pop.js";
 
 function _drawWeather() {
     // @ts-ignore
-    document.getElementById('weather').innerHTML = `${ProxyState.weather}`
+    document.getElementById('weather').innerHTML = ((`${ProxyState.weather}` - 273.15) * 1.8) + 32;
 }
+
 
 
 
@@ -25,5 +26,11 @@ export class WeatherController {
             Pop.error(error)
         }
     }
+
+    fToC() {
+        // @ts-ignore
+        document.getElementById('weather').innerHTML = (`${ProxyState.weather}` - 273.15);
+    }
 }
+
 
