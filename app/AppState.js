@@ -10,6 +10,12 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Weather.js').Weather} */
   // @ts-ignore
   weather = null
+  /** @type {import('./Models/Quote.js').Quote} */
+  // @ts-ignore
+  quote = null
+  /** @type {import('./Models/Quote.js').Author} */
+  // @ts-ignore
+  author = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {

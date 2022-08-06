@@ -1,25 +1,29 @@
 .bg-img {
+    object-fit: contain;
     height: 100vh;
     position: relative;
 }
 
-.timeY {
+.time {
     position: absolute;
     transform: translate(20em, 20em);
+    background-color: transparent;
 }
 
 
 .weather {
     position: absolute;
-    transform: translateX(45em)
+    transform: translateX(40em)
 }
 
 .quote {
+    object-fit: contain;
     position: absolute;
-    transform: translate(20em, 40em);
+    transform: translate(2em, 35em);
+    margin: 3em;
 }
 
 .todo {
     position: absolute;
-    transform: translate(40em, 40em);
+    transform: translate(50em, 30em);
 }
