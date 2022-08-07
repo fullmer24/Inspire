@@ -2,12 +2,14 @@
     object-fit: contain;
     height: 100vh;
     position: relative;
+    background-repeat: no-repeat;
 }
 
 .time {
     position: absolute;
     transform: translate(20em, 20em);
     background-color: transparent;
+    backdrop-filter: blur(4px);
 }
 
 
