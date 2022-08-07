@@ -39,18 +39,22 @@
         <!-- <div class="text-danger">author</div> -->
       </div>
       <div class="row todo p-2" id="todo">
-        <div class="card">
+        <div class="card p-2">
           <h1>ToDos:</h1>
-          <p class="mdi mdi-delete-forever checkbox">todos go here</p>
+          <p class="p-2">
+            <span><button class="mdi mdi-delete"
+                onclick="app.todosController.deleteTodo('${this.id}')"></button>${this.todo}</span>
+            <input type="checkbox" ${this.checked ? 'checked' : '' } onchange="app.todosController.finishedTodo"
+              class="p-2">
+          </p>
+          <form onsubmit="app.todosController.createTodo()">
+            <div class="input-group">
+              <label for="name" class="visually-hidden"></label>
+              <input type="text" id="todoForm" name="name" class="form-control p-2" required>
+              <button class="p-2" type="submit">Add ToDo</button>
+            </div>
+          </form>
         </div>
-        <form onsubmit="app.todosController.createTodo()">
-          <div class="input-group">
-            <label for="name" class="visually-hidden"></label>
-            <input type="text" id="todoForm" name="name" class="form-control" required>
-          </div>
-
-          <button type="submit">Add ToDo</button>
-        </form>
       </div>
     </div>
 

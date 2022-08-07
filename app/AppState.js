@@ -16,6 +16,9 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Author.js').Author} */
   // @ts-ignore
   author = null
+  /** @type {import('./Models/Todo.js').Todo} */
+  // @ts-ignore
+  todos = []
 
 
 }
