@@ -13,6 +13,7 @@
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <title>Inspire</title>
 </head>
 
@@ -38,13 +39,17 @@
         <!-- <div class="text-danger">author</div> -->
       </div>
       <div class="row todo p-2" id="todo">
-        <form onsubmit="app.playersController.createPlayer()">
+        <div class="card">
+          <h1>ToDos:</h1>
+          <p class="mdi mdi-delete-forever checkbox">todos go here</p>
+        </div>
+        <form onsubmit="app.todosController.createTodo()">
           <div class="input-group">
             <label for="name" class="visually-hidden"></label>
-            <input type="text" id="banana" name="name" class="form-control" required>
+            <input type="text" id="todoForm" name="name" class="form-control" required>
           </div>
 
-          <button type="submit">Create</button>
+          <button type="submit">Add ToDo</button>
         </form>
       </div>
     </div>
