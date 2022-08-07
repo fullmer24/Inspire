@@ -38,10 +38,17 @@
         <!-- <div class="text-danger">author</div> -->
       </div>
       <div class="row todo p-2" id="todo">
-        <div class="text-danger">todo</div>
+        <form onsubmit="app.playersController.createPlayer()">
+          <div class="input-group">
+            <label for="name" class="visually-hidden"></label>
+            <input type="text" id="banana" name="name" class="form-control" required>
+          </div>
+
+          <button type="submit">Create</button>
+        </form>
       </div>
     </div>
-    </div>
+
 
 
 
