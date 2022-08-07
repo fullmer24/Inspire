@@ -12,11 +12,10 @@ if (minute < 10) {
     minute = '0' + minute
 }
 
-if (hour >= 12) {
+if (hour <= 12) {
     timePeriod = "pm"
-} else {
-    timePeriod = "am"
 }
+
 
 // @ts-ignore
 document.getElementById('time').innerHTML = hour + ":" + minute + " " + timePeriod
