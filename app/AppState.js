@@ -13,6 +13,9 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Quote.js').Quote} */
   // @ts-ignore
   quote = null
+  /** @type {import('./Models/Author.js').Author} */
+  // @ts-ignore
+  author = null
 
 
 }

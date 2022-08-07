@@ -25,12 +25,4 @@ export class QuoteController {
         }
     }
 
-    // async getAuthor() {
-    //     try {
-    //         await quotesService.getAuthor()
-    //     } catch (error) {
-    //         console.error('[getting author]', error);
-    //         Pop.error(error)
-    //     }
-    // }
 }

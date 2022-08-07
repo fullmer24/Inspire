@@ -22,7 +22,7 @@
       <!-- <img src="https://bcw.blob.core.windows.net/public//8100312333639939" alt=""> -->
       <div class="container">
         <div class="row time" id="time">
-          <div class="text-danger elevation-4">
+          <div class="text-danger border elevation-4">
             <h1>10:30</h1>
           </div>
         </div>
@@ -31,8 +31,10 @@
         </div>
         <!-- <div>weather</div> -->
       </div>
-      <div class="row card quote" id="quote">
+      <div class="row card quote selectable no-select" on-hover="app.authorController._drawAuthor()" id="quote">
         <!-- <div class="text-danger">quote</div> -->
+      </div>
+      <div class="row card author" id="author">
         <!-- <div class="text-danger">author</div> -->
       </div>
       <div class="row todo" id="todo">

@@ -19,8 +19,14 @@
 .quote {
     object-fit: contain;
     position: absolute;
-    transform: translate(2em, 35em);
+    transform: translate(2em, 33em);
     margin: 3em;
+}
+
+.author {
+    object-fit: contain;
+    position: absolute;
+    transform: translate(8em, 40em);
 }
 
 .todo {
