@@ -1,5 +1,5 @@
 .bg-img {
-    object-fit: contain;
+    background-size: cover;
     height: 100vh;
     position: relative;
     background-repeat: no-repeat;

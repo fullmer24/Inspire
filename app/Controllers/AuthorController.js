@@ -4,15 +4,17 @@ import { Pop } from "../Utils/Pop.js";
 
 
 function _drawAuthor() {
+    let author = ProxyState.author
     // @ts-ignore
-    document.getElementById('author').innerHTML = (`${ProxyState.author}`);
+    document.getElementById('author').innerHTML = /*html*/`
+        <p>${author}</p>
+    `
 }
 
 
 
 export class AuthorController {
     constructor() {
-        // console.log(`author controller loaded`);
         ProxyState.on('author', _drawAuthor)
         this.getAuthor()
     }

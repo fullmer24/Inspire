@@ -28,12 +28,11 @@
         </div>
         <!-- <div>weather</div> -->
       </div>
-      <div class="row card quote selectable no-select p-2" on-hover="app.authorController._drawAuthor()" id="quote">
-        <!-- <div class="text-danger">quote</div> -->
+      <div class="row card quote selectable no-select p-2"
+        onmouseover="document.getElementById('author').style.display = 'block'"
+        onmouseout="document.getElementById('author').style.display = 'none';" id="quote">
       </div>
-      <div class="row card author p-2" id="author">
-        <!-- <div class="text-danger">author</div> -->
-      </div>
+      <div class="row card author p-2" style="display: none;" id="author"></div>
       <div class="row todo p-2" id="todo">
         <div class="card p-2">
           <h1>ToDos:</h1>
