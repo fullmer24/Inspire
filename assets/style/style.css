@@ -7,9 +7,10 @@
 
 .time {
     position: absolute;
-    transform: translate(20em, 20em);
+    transform: translate(12em, 20em);
     background-color: transparent;
     backdrop-filter: blur(4px);
+    font-size: 20px;
 }
 
 
