@@ -20,6 +20,13 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Todo.js').Todo} */
   // @ts-ignore
   todos = [
+    {
+      id: { type: String, required: true, unique: true },
+      todo: { type: String, required: true },
+      checked: { type: Boolean, required: true, default: false },
+    },
+
+
     new Todo({
       id: 1,
       todo: 'Fix this',
@@ -29,6 +36,7 @@ class AppState extends EventEmitter {
       id: 2,
       todo: 'Double check'
     })
+
   ]
 
 
