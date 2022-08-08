@@ -17,7 +17,7 @@ function _drawAuthor() {
 export class AuthorController {
     constructor() {
         ProxyState.on('author', _drawAuthor)
-        this.getAuthor()
+        // this.getAuthor()
     }
 
     async getAuthor() {

@@ -6,6 +6,7 @@ import { Pop } from "../Utils/Pop.js";
 
 
 function _drawQuote() {
+    console.log(ProxyState.quote);
     // @ts-ignore
     document.getElementById('quote').innerHTML = (`${ProxyState.quote}`);
 }

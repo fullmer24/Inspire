@@ -5,11 +5,11 @@ import { Pop } from "../Utils/Pop.js"
 
 
 function _drawTodos() {
-    let template = ProxyState.todos
+    let template = ''
     ProxyState.todos.forEach(t => template += t.TodosTemplate)
     console.log(ProxyState.todos);
     // @ts-ignore
-    document.getElementById('todo-list').innerText = template
+    document.getElementById('todo-list').innerHTML = template
     console.log(`drawing todos`);
     // @ts-ignore
     document.getElementById('todo-counts').innerHTML = `
@@ -89,10 +89,10 @@ export class TodosController {
         }
     }
 
-    async toggleTodo(id) {
+    async toggleTodo(todoId) {
         try {
             console.log(`finishing todos`);
-            await todosService.toggleTodo(id)
+            await todosService.toggleTodo(todoId)
         } catch (error) {
             console.error('[Toggle Todo]', error)
             Pop.error(error)

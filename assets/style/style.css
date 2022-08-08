@@ -30,12 +30,13 @@
 .author {
     object-fit: contain;
     position: absolute;
-    transform: translate(8em, 30em);
+    transform: translate(8em, 32em);
+    height: 2em;
     justify-content: center;
 }
 
 .todo {
     position: absolute;
     transform: translate(50em, 10em);
-    max-width: 45%;
+    max-width: 30%;
 }

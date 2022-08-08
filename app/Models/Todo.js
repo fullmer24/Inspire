@@ -12,7 +12,7 @@ export class Todo {
     <div class="card p-2">
         <p class="p-2">
             <span><button class="mdi mdi-delete" required onclick="app.todosController.deleteTodo('${this.id}')"></button>${this.description}</span>
-            <input type="checkbox" ${this.completed ? 'completed' : ''} onchange="app.todosController.toggleTodo(${this.id})" class="p-2">
+            <input type="checkbox" ${this.completed ? 'checked' : ''} onchange="app.todosController.toggleTodo('${this.id}')" class="p-2">
         </p>
     </div>
         `
