@@ -7,13 +7,15 @@ export class Todo {
         this.checked = data.checked || false
     }
 
-    get Template() {
+    get TodosTemplate() {
         return `
     <div class="card p-2">
+        <div id="totalTodos"></div>
+        <div id="totalChecked"></div>
         <h1>ToDos:</h1>
         <p class="p-2">
             <span><button class="mdi mdi-delete" onclick="app.todosController.deleteTodo('${this.id}')"></button>${this.todo}</span>
-            <input type="checkbox" ${this.checked ? 'checked' : ''} onchange="app.todosController.finishedTodo(${this.id})" class="p-2">
+            <input type="checkbox" ${this.checked ? 'checked' : ''} onchange="app.todosController.toggleTodo(${this.id})" class="p-2">
         </p>
         <form onsubmit="app.todosController.createTodo()">
             <div class="input-group">
