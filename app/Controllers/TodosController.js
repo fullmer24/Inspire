@@ -62,11 +62,11 @@ export class TodosController {
                 description: { type: String, required: true },
             }
 
-            // let new Todo = {
-            //     description: form.description.value,
-            // }
+            let newTodo = {
+                description: form.description.value,
+            }
 
-            await todosService.addTodo(formData)
+            await todosService.addTodo(newTodo)
             //                        ^ pass that formData to the service
             // then clear the form
             form.reset()
