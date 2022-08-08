@@ -1,17 +1,7 @@
 import { ProxyState } from "../AppState.js"
+import { Todo } from "../Models/Todo.js"
 import { todosService } from "../Services/TodosService.js"
 import { Pop } from "../Utils/Pop.js"
-
-
-let todos = []
-let myObject =
-{
-    id: { type: String, required: true, unique: true },
-    todo: { type: String, required: true },
-    checked: { type: Boolean, required: true, default: false },
-},
-
-    todos.push(myObject)
 
 
 function _drawTodos() {
@@ -19,17 +9,17 @@ function _drawTodos() {
     ProxyState.todos.forEach(t => template += t.TodosTemplate)
     console.log(ProxyState.todos);
     // @ts-ignore
-    document.getElementById('totalTodos').innerText = template
+    document.getElementById('todo-list').innerText = template
     console.log(`drawing todos`);
     // @ts-ignore
-    document.getElementById('toggledTodos').innerHTML = `
+    document.getElementById('todo-counts').innerHTML = `
     <div>
         <div>
             <div>
             <b>Total Todos:</b> ${ProxyState.todos.length}
             </div>
             <div>
-            <b>Finished Todos:</b> ${ProxyState.todos.filter(t => t.checked).length}
+            <b>Finished Todos:</b> ${ProxyState.todos.filter(t => t.completed).length}
             </div>
         </div>
     </div>
@@ -56,38 +46,58 @@ export class TodosController {
         }
     }
 
-    // async addTodo() {
-    //     try {
-    //         console.log(`adding todos`);
-    //         await todosService.addTodo()
-    //     } catch (error) {
-    //         console.error('[Adding Todo]', error)
-    //         Pop.error(error)
-    //     }
-    // }
+    async addTodo() {
+        try {
+            // @ts-ignore
+            window.event.preventDefault()
+            console.log(`adding todos`);
+            // FIXME get the description out of the form
+            // look a formData object from gregslist or createPlayer fireside
+            // @ts-ignore
+            const form = window.event.target
+            const formData = {
+                id: { type: String, required: true, unique: true },
+                completed: { type: Boolean, required: true, default: false },
+                user: { type: String, required: true },
+                description: { type: String, required: true },
+            }
 
-    // async deleteTodo(id) {
-    //     try {
-    //         console.log(`deleting todos`);
-    //         const yes = await Pop.confirm('Delete Todo')
-    //         if (!yes) { return }
+            // let new Todo = {
+            //     description: form.description.value,
+            // }
 
-    //         await todosService.deleteTodo(id)
-    //     } catch (error) {
-    //         console.error('[Delete Todo]', error)
-    //         Pop.error(error)
-    //     }
-    // }
+            await todosService.addTodo(formData)
+            //                        ^ pass that formData to the service
+            // then clear the form
+            form.reset()
+        } catch (error) {
+            console.error('[Adding Todo]', error)
+            Pop.error(error)
+        }
+    }
 
-    // async toggleTodo(id) {
-    //     try {
-    //         console.log(`finishing todos`);
-    //         await todosService.toggleTodo(id)
-    //     } catch (error) {
-    //         console.error('[Toggle Todo]', error)
-    //         Pop.error(error)
-    //     }
-    // }
+    async deleteTodo(id) {
+        try {
+            console.log(`deleting todos`);
+            const yes = await Pop.confirm('Delete Todo')
+            if (!yes) { return }
+
+            await todosService.deleteTodo(id)
+        } catch (error) {
+            console.error('[Delete Todo]', error)
+            Pop.error(error)
+        }
+    }
+
+    async toggleTodo(id) {
+        try {
+            console.log(`finishing todos`);
+            await todosService.toggleTodo(id)
+        } catch (error) {
+            console.error('[Toggle Todo]', error)
+            Pop.error(error)
+        }
+    }
 
 
 

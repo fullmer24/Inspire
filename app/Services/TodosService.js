@@ -10,37 +10,37 @@ class TodosService {
         console.log(ProxyState.todos);
     }
 
-    // async toggleTodo(id) {
-    //     // @ts-ignore
-    //     let todo = ProxyState.todos.find(t => t.id == id)
-    //     if (!todo) {
-    //         throw new Error('Bad Todo id')
-    //     }
-    //     todo.checked = !todo.checked
-    //     // @ts-ignore
-    //     let todoIndex = ProxyState.todos.indexOf(todo)
-    //     let res = await sandboxApi.put(`/Kade/todos/${id}`, todo)
-    //     let updatedTodo = new todo(res.data)
-    //     // @ts-ignore
-    //     ProxyState.todos.splice(todoIndex, 1, updatedTodo)
-    //     ProxyState.todos = ProxyState.todos
-    // }
+    async toggleTodo(id) {
+        // @ts-ignore
+        let todo = ProxyState.todos.find(t => t.id == id)
+        if (!todo) {
+            throw new Error('Bad Todo id')
+        }
+        todo.completed = !todo.completed
+        // @ts-ignore
+        let todoIndex = ProxyState.todos.indexOf(todo)
+        let res = await sandboxApi.put(`/Kade/todos/${id}`, todo)
+        let updatedTodo = new Todo(res.data)
+        // @ts-ignore
+        ProxyState.todos.splice(todoIndex, 1, updatedTodo)
+        ProxyState.todos = ProxyState.todos
+    }
 
-    // async deleteTodo(id) {
-    //     await sandboxApi.delete(`/Kade/todos/${id}`)
-    //     ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
-    // } 
+    async deleteTodo(id) {
+        await sandboxApi.delete(`/Kade/todos/${id}`)
+        ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
+    }
 
-    // async addTodo() {
-    //     if (ProxyState.todos.find(t => t.todo == ProxyState.todos)) {
-    //         throw new Error('You already have this todo')
-    //     }
+    async addTodo(formData) {
+        // FIXME  ^ receives the form data so it can send it to the server
 
-    //     let res = await sandboxApi.post('/Kade/todos', ProxyState.todos)
 
-    //     let newTodo = new Todo(res.data)
-    //     ProxyState.todos = [...ProxyState.todos, newTodo]
-    // }
+        let res = await sandboxApi.post('/Kade/todos', formData)
+
+        // Don't need to change below this
+        let newTodo = new Todo(res.data)
+        ProxyState.todos = [...ProxyState.todos, newTodo]
+    }
 
 
 }
