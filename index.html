@@ -20,13 +20,11 @@
 <body>
   <main>
     <div id="bg-img" class="bg-img">
-      <!-- <img src="https://bcw.blob.core.windows.net/public//8100312333639939" alt=""> -->
       <div class="container">
         <div class="row time border elevation-4 p-3 text-danger" id="time"></div>
         <div class="row card weather selectable no-select p-2" id="weather" data-bs-toggle="button"
-          onclick="app.weatherController.fToC()" aria-pressed="false">
+          onclick="app.weatherController.drawWeather()" aria-pressed="false">
         </div>
-        <!-- <div>weather</div> -->
       </div>
       <div class="row card quote selectable no-select p-2"
         onmouseover="document.getElementById('author').style.display = 'block'"

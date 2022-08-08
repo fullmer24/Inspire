@@ -4,16 +4,17 @@ import { Pop } from "../Utils/Pop.js";
 
 
 function _drawWeather() {
+    let weather = Math.round(((parseInt(ProxyState.weather.toString()) - 273.15) * 1.8) + 32)
     // @ts-ignore
-    document.getElementById('weather').innerHTML = Math.round(((`${ProxyState.weather}` - 273.15) * 1.8) + 32);
+    document.getElementById('weather').innerHTML = `
+        <div>${weather}</div>
+    `
 }
 
-
-
+let clicks = 1
 
 export class WeatherController {
     constructor() {
-        // console.log(`weather controller loaded`);
         ProxyState.on('weather', _drawWeather)
         this.getWeather()
     }
@@ -27,9 +28,22 @@ export class WeatherController {
         }
     }
 
-    fToC() {
+    drawWeather() {
+        let weather = parseInt(ProxyState.weather.toString()) - 273.15
+
+        if (clicks % 2) {
+            weather = Math.round(weather)
+        } else {
+            weather = Math.round((weather * 1.8) + 32)
+        }
+
+        clicks++
+
+        let template = `
+            <div>${weather}</div>
+        `
         // @ts-ignore
-        document.getElementById('weather').innerHTML = Math.round((`${ProxyState.weather}` - 273.15));
+        document.getElementById('weather').innerHTML = template
     }
 }
 
