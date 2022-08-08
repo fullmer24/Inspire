@@ -22,7 +22,7 @@ class AppState extends EventEmitter {
   todos = [
     new Todo({
       id: 1,
-      todo: 'Fix this shit',
+      todo: 'Fix this',
       checked: false
     }),
     new Todo({

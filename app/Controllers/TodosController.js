@@ -7,8 +7,7 @@ import { Pop } from "../Utils/Pop.js"
 
 
 function _drawTodos() {
-    let template = ''
-    // @ts-ignore
+    let template = ProxyState.todos
     ProxyState.todos.forEach(t => template += t.TodosTemplate)
     console.log(ProxyState.todos);
     // @ts-ignore

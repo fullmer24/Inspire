@@ -3,6 +3,13 @@ import { Todo } from "../Models/Todo.js"
 import { sandboxApi } from "./AxiosService.js"
 
 class TodosService {
+    async getTodos() {
+        console.log(`todos`);
+        let res = await sandboxApi.get('/Kade/todos')
+        ProxyState.todos = res.data.map(t => new Todo(t))
+        console.log(ProxyState.todos);
+    }
+
     // async toggleTodo(id) {
     //     // @ts-ignore
     //     let todo = ProxyState.todos.find(t => t.id == id)
@@ -22,14 +29,7 @@ class TodosService {
     // async deleteTodo(id) {
     //     await sandboxApi.delete(`/Kade/todos/${id}`)
     //     ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
-    // }
-
-    async getTodos() {
-        console.log(`todos`);
-        let res = await sandboxApi.get('/Kade/todos')
-        ProxyState.todos = res.data.map(t => new Todo(t))
-        console.log(ProxyState.todos);
-    }
+    // } 
 
     // async addTodo() {
     //     if (ProxyState.todos.find(t => t.todo == ProxyState.todos)) {
