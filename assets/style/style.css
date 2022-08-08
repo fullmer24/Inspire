@@ -37,4 +37,5 @@
 .todo {
     position: absolute;
     transform: translate(50em, 10em);
+    max-width: 45%;
 }
