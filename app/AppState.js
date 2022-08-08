@@ -20,11 +20,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Todo.js').Todo} */
   // @ts-ignore
   todos = [
-    {
-      id: { type: String, required: true, unique: true },
-      todo: { type: String, required: true },
-      checked: { type: Boolean, required: true, default: false },
-    },
+
 
 
     new Todo({
@@ -41,6 +37,8 @@ class AppState extends EventEmitter {
 
 
 }
+
+
 
 export const ProxyState = new Proxy(new AppState(), {
   get(target, prop) {

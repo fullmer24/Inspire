@@ -3,7 +3,15 @@ import { todosService } from "../Services/TodosService.js"
 import { Pop } from "../Utils/Pop.js"
 
 
+let todos = []
+let myObject =
+{
+    id: { type: String, required: true, unique: true },
+    todo: { type: String, required: true },
+    checked: { type: Boolean, required: true, default: false },
+},
 
+    todos.push(myObject)
 
 
 function _drawTodos() {
