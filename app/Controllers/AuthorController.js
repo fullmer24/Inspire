@@ -3,14 +3,15 @@ import { authorsService } from "../Services/AuthorsService.js";
 import { Pop } from "../Utils/Pop.js";
 
 
+
 function _drawAuthor() {
     let author = ProxyState.author
     // @ts-ignore
     document.getElementById('author').innerHTML = /*html*/`
         <p>${author}</p>
     `
-}
 
+}
 
 
 export class AuthorController {
@@ -27,5 +28,4 @@ export class AuthorController {
             Pop.error(error)
         }
     }
-
 }

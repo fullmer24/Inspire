@@ -3,10 +3,14 @@ import { quotesService } from "../Services/QuotesService.js";
 import { Pop } from "../Utils/Pop.js";
 
 
+
+
 function _drawQuote() {
     // @ts-ignore
     document.getElementById('quote').innerHTML = (`${ProxyState.quote}`);
 }
+
+
 
 
 export class QuoteController {
@@ -24,5 +28,4 @@ export class QuoteController {
             Pop.error(error)
         }
     }
-
 }

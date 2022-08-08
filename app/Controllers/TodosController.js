@@ -15,18 +15,18 @@ function _drawTodos() {
     document.getElementById('totalTodos').innerText = template
     console.log(`drawing todos`);
     // @ts-ignore
-    // document.getElementById('toggledTodos').innerHTML = `
-    // <div>
-    //     <div>
-    //         <div>
-    //         <b>Total Todos:</b> ${ProxyState.todos.length}
-    //         </div>
-    //         <div>
-    //         <b>Finished Todos:</b> ${ProxyState.todos.filter(t => t.checked).length}
-    //         </div>
-    //     </div>
-    // </div>
-    // `
+    document.getElementById('toggledTodos').innerHTML = `
+    <div>
+        <div>
+            <div>
+            <b>Total Todos:</b> ${ProxyState.todos.length}
+            </div>
+            <div>
+            <b>Finished Todos:</b> ${ProxyState.todos.filter(t => t.checked).length}
+            </div>
+        </div>
+    </div>
+    `
 
 
 }

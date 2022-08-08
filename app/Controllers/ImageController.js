@@ -2,12 +2,12 @@ import { ProxyState } from "../AppState.js"
 import { imagesService } from "../Services/ImagesService.js"
 import { Pop } from "../Utils/Pop.js";
 
-
-
 function _drawImg() {
     // @ts-ignore
     document.getElementById('bg-img').style.backgroundImage = `url(${ProxyState.image})`
 }
+
+
 
 export class ImageController {
     constructor() {
@@ -15,6 +15,7 @@ export class ImageController {
         ProxyState.on('image', _drawImg)
         this.getImages()
     }
+
 
     async getImages() {
         try {
@@ -24,11 +25,4 @@ export class ImageController {
             Pop.error(error)
         }
     }
-
-
-
-
-
-
-
 }

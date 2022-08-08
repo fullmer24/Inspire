@@ -1,4 +1,3 @@
-
 getTime()
 
 function getTime() {
@@ -20,7 +19,6 @@ function getTime() {
     if (hour <= 12) {
         timePeriod = "pm"
     }
-
 
     // @ts-ignore
     document.getElementById('time').innerHTML = hour + ":" + minute + " " + timePeriod
