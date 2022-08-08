@@ -13,19 +13,20 @@ function _drawTodos() {
     console.log(ProxyState.todos);
     // @ts-ignore
     document.getElementById('totalTodos').innerText = template
+    console.log(`drawing todos`);
     // @ts-ignore
-    document.getElementById('toggledTodos').innerHTML = `
-<div>
-    <div>
-        <div>
-        <b>Total Todos:</b> ${ProxyState.todos.length}
-        </div>
-        <div>
-        <b>Finished Todos:</b> ${ProxyState.todos.filter(t => t.checked).length}
-        </div>
-    </div>
-</div>
-`
+    // document.getElementById('toggledTodos').innerHTML = `
+    // <div>
+    //     <div>
+    //         <div>
+    //         <b>Total Todos:</b> ${ProxyState.todos.length}
+    //         </div>
+    //         <div>
+    //         <b>Finished Todos:</b> ${ProxyState.todos.filter(t => t.checked).length}
+    //         </div>
+    //     </div>
+    // </div>
+    // `
 
 
 }
@@ -48,41 +49,38 @@ export class TodosController {
         }
     }
 
-    async addTodo() {
-        try {
-            console.log(`adding todos`);
-            await todosService.addTodo()
-        } catch (error) {
-            console.error('[Adding Todo]', error)
-            Pop.error(error)
-        }
-    }
+    // async addTodo() {
+    //     try {
+    //         console.log(`adding todos`);
+    //         await todosService.addTodo()
+    //     } catch (error) {
+    //         console.error('[Adding Todo]', error)
+    //         Pop.error(error)
+    //     }
+    // }
 
-    async deleteTodo(id) {
-        try {
-            console.log(`deleting todos`);
-            const yes = await Pop.confirm('Delete Todo')
-            if (!yes) { return }
+    // async deleteTodo(id) {
+    //     try {
+    //         console.log(`deleting todos`);
+    //         const yes = await Pop.confirm('Delete Todo')
+    //         if (!yes) { return }
 
-            await todosService.deleteTodo(id)
-        } catch (error) {
-            console.error('[Delete Todo]', error)
-            Pop.error(error)
-        }
-    }
+    //         await todosService.deleteTodo(id)
+    //     } catch (error) {
+    //         console.error('[Delete Todo]', error)
+    //         Pop.error(error)
+    //     }
+    // }
 
-    async toggleTodo(id) {
-        try {
-            console.log(`finishing todos`);
-            await todosService.toggleTodo(id)
-        } catch (error) {
-            console.error('[Toggle Todo]', error)
-            Pop.error(error)
-        }
-    }
-
-
-
+    // async toggleTodo(id) {
+    //     try {
+    //         console.log(`finishing todos`);
+    //         await todosService.toggleTodo(id)
+    //     } catch (error) {
+    //         console.error('[Toggle Todo]', error)
+    //         Pop.error(error)
+    //     }
+    // }
 
 
 

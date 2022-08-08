@@ -1,3 +1,4 @@
+import { Todo } from "./Models/Todo.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
@@ -18,7 +19,17 @@ class AppState extends EventEmitter {
   author = null
   /** @type {import('./Models/Todo.js').Todo} */
   // @ts-ignore
-  todos = []
+  todos = [
+    new Todo({
+      id: 1,
+      todo: 'Fix this shit',
+      checked: false
+    }),
+    new Todo({
+      id: 2,
+      todo: 'Double check'
+    })
+  ]
 
 
 }
