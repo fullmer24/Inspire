@@ -1,11 +1,13 @@
-let currentTime = new Date()
-let hour = currentTime.getHours()
-let minute = currentTime.getMinutes()
-let timePeriod = "am"
 
 getTime()
 
 function getTime() {
+
+    let currentTime = new Date()
+    let hour = currentTime.getHours()
+    let minute = currentTime.getMinutes()
+    let timePeriod = "am"
+
     if (hour > 12) {
         hour = hour - 12
     }
@@ -24,4 +26,4 @@ function getTime() {
     document.getElementById('time').innerHTML = hour + ":" + minute + " " + timePeriod
 }
 
-// setInterval(getTime, 10000)
+setInterval(getTime, 15000)
