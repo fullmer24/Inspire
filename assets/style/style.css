@@ -7,7 +7,7 @@
 
 .time {
     position: absolute;
-    transform: translate(12em, 20em);
+    transform: translate(12em, 13em);
     background-color: transparent;
     backdrop-filter: blur(4px);
     font-size: 20px;
@@ -22,14 +22,16 @@
 .quote {
     object-fit: contain;
     position: absolute;
-    transform: translate(2em, 33em);
+    transform: translate(0em, 23em);
     margin: 3em;
+    max-width: 45%;
 }
 
 .author {
     object-fit: contain;
     position: absolute;
-    transform: translate(8em, 40em);
+    transform: translate(8em, 30em);
+    justify-content: center;
 }
 
 .todo {
